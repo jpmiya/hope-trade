@@ -79,6 +79,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'HopeTrade',
     }
+    'usuarios':{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'UsuariosBD',
+    }
+    'Publicaciones': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'PublicacionesBD',
+    }
 }
 
 
