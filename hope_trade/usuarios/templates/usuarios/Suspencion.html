@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil de Usuario</title>
+<title>Página de Suspensión</title>
 <style>
     body {
-        background-color: #61b0b2;
+        background-color: #9FF781;
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
     }
     .navbar {
-        background-color: #ffffff;
-        color: white;
+        background-color: white; /* Cambio de color de la barra */
+        color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: 10px 30px; /* Aumento del padding */
     }
     .navbar img {
-        width: 50px;
+        width: auto;
         height: 50px;
-        border-radius: 50%;
         margin-right: 10px;
     }
     .nav-links {
         display: flex;
+        align-items: center;
     }
     .nav-links button {
         background-color: transparent;
@@ -43,52 +43,48 @@
         background-color: #ffffff;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        position: relative;
-    }
-    .profile-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+    }
+    .dates-container {
+        display: flex;
+        align-items: center;
     }
     .profile-picture {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
-        background-color: gray;
-        overflow: hidden;
+        background-color: gray; /* Color de fondo provisional */
+        overflow: hidden; /* Oculta el exceso de imagen */
+        margin-right: 20px;
     }
     .profile-picture img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
     }
-    .profile-form {
+    .dates {
+        text-align: center;
+    }
+    .button-container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-end;
     }
-    .profile-form input {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    .save-button {
-        background-color: #9FF781;
-        color: white;
-        border: none;
+    .button {
+        background-color: white;
+        color: black;
+        border: 2px solid black;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
         margin-top: 20px;
     }
-    .return-button {
-        background-color: white;
-        color: black;
-        border: 1px solid black;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
+    .red-button {
+        background-color: #3399FF;
+        border-color: #3399FF;
+        color: white;
     }
 </style>
 </head>
@@ -103,47 +99,62 @@
             <button onclick="location.href='mi_perfil.html'">MI PERFIL</button>
         </div>
     </div>
+
     <div class="container">
-        <h2>MI PERFIL: </h2>
-        <div class="profile-header">
+        <div class="dates-container">
             <div class="profile-picture">
                 <img src="ruta_de_la_imagen.jpg" alt="Foto de perfil">
             </div>
-            <div class="profile-options">
-                <button class="return-button" id="volver">Volver</button>
-                <button class="save-button" id="guardar">Guardar</button>
+            <div class="dates">
+                <p><h4>Fecha Actual: </h4><span id="fecha-actual"></span></p>
+                <p><h4>Fecha fin de suspencion: </h4><span id="fecha-10dias"></span></p>
             </div>
         </div>
-        <form class="profile-form" action="#" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" value="Nombre Actual">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="email@actual.com">
-        </form>
+        <div class="button-container">
+            <button class="button red-button" id="Suspender">Suspender</button>
+            <button class="button" id="volver">Volver</button>
+        </div>
     </div>
+
+    <script>
+        // Obtener el elemento span donde se mostrarán las fechas
+        const fechaActualElement = document.getElementById('fecha-actual');
+        const fecha10DiasElement = document.getElementById('fecha-10dias');
+
+        // Obtener la fecha actual y la fecha +10 días
+        const fechaActual = new Date();
+        const fecha10Dias = new Date();
+        fecha10Dias.setDate(fecha10Dias.getDate() + 10);
+
+        // Formatear las fechas en formato dd/mm/yyyy
+        const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        const fechaActualFormateada = fechaActual.toLocaleDateString('es-ES', options);
+        const fecha10DiasFormateada = fecha10Dias.toLocaleDateString('es-ES', options);
+
+        // Mostrar las fechas en los elementos span
+        fechaActualElement.textContent = fechaActualFormateada;
+        fecha10DiasElement.textContent = fecha10DiasFormateada;
+
+        const botonVolver = document.getElementById('volver');
+
+        botonVolver.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#9FF781'; // Cambia el color al fondo cuando se coloca el cursor
+        });
+
+        botonVolver.addEventListener('mouseout', function() {
+            this.style.backgroundColor = 'white'; // Restaura el color blanco cuando se retira el cursor
+        });
+
+        const botonSuspender = document.getElementById('Suspender');
+
+        botonSuspender.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#FF5733'; // Cambia el color al fondo cuando se coloca el cursor
+        });
+
+        botonSuspender.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#3399FF'; // Restaura el color blanco cuando se retira el cursor
+        });
+
+    </script>
 </body>
-
-<script>
-    const botonVolver = document.getElementById('volver');
-
-    botonVolver.addEventListener('mouseover', function() {
-        this.style.backgroundColor = '#61b0b2'; // Cambia el color al fondo cuando se coloca el cursor
-    });
-
-    botonVolver.addEventListener('mouseout', function() {
-        this.style.backgroundColor = 'white'; // Restaura el color blanco cuando se retira el cursor
-    });
-
-    const botonGuardar = document.getElementById('guardar');
-
-    botonGuardar.addEventListener('mouseover', function() {
-        this.style.backgroundColor = '#61b0b2'; // Cambia el color al fondo cuando se coloca el cursor
-    });
-
-    botonGuardar.addEventListener('mouseout', function() {
-        this.style.backgroundColor = '#9FF781'; // Restaura el color blanco cuando se retira el cursor
-    });
-
-</script>
 </html>
-
