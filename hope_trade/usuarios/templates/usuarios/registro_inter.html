@@ -6,12 +6,40 @@
 <title>Registro de Usuario</title>
 <style>
     body {
-        background-color: #9FF781;
-        font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
+        background-color: #61b0b2; /* Color de fondo de la página */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar {
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+    }
+    .navbar img {
+        width: auto;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 5px; /* Bordes más suaves */
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+    .nav-links button {
+        background-color: transparent;
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-right: 20px;
+        font-size: 16px;
     }
     .container {
         max-width: 500px;
-        margin: 50px auto;
+        margin: 30px auto 50px ; /* Centra el contenedor en la página */
         padding: 20px;
         background-color: #ffffff;
         border-radius: 10px;
@@ -29,22 +57,38 @@
     input[type="text"],
     input[type="email"],
     select {
-        width: 100%;
+        width: calc(100% - 22px); /* Reducir el ancho para evitar que se peguen al borde */
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
     }
     input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
+        background-color: #61b0b2; /* Cambiar el color del botón al color de fondo */
+        color: #fff; /* Color del texto en blanco */
         border: none;
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
+        transition: background-color 0.3s; /* Transición suave del color de fondo */
+    }
+    input[type="submit"]:hover {
+        background-color: #fff; /* Cambiar el color del botón al pasar el mouse */
+        color: #61b0b2; /* Color del texto en el color de fondo original */
     }
 </style>
 </head>
 <body>
+    <div class="navbar">
+        <div>
+            <img src="ruta_de_la_imagen.jpg" alt="LOGO">
+        </div>
+        <div class="nav-links">
+            <button onclick="location.href='inicio.html'">INICIO</button>
+            <button onclick="location.href='publicaciones.html'">PUBLICACIONES</button>
+            <button onclick="location.href='mi_perfil.html'">MI PERFIL</button>
+        </div>
+    </div>
+
     <div class="container">
         <h2>Registro de Usuario</h2>
         <form action="procesar_registro.php" method="POST">
@@ -78,3 +122,5 @@
     </div>
 </body>
 </html>
+
+
