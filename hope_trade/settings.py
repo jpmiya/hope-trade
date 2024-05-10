@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'usuarios'
+    'hope_trade.usuarios'
 ]
 
 MIDDLEWARE = [
@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'hope_trade.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'HopeTrade',
-    }
+        'NAME': 'Hope-Trade',
+    },
     'usuarios':{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'UsuariosBD',
-    }
+    },
     'Publicaciones': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'PublicacionesBD',
