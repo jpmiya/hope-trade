@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalle del Producto</title>
+<style>
+    body {
+        background-color: #61b0b2;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar {
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+    }
+    .navbar img {
+        width: auto;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+    .nav-links button {
+        background-color: transparent;
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-right: 20px;
+        font-size: 16px;
+    }
+    .product-container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-image-container {
+        display: flex;
+        align-items: center; /* Centra verticalmente la imagen y el texto */
+        margin-bottom: 20px;
+    }
+    .product-image img {
+        width: 150px; /* Ancho de la imagen cuadrada */
+        height: 150px; /* Altura de la imagen cuadrada */
+        border-radius: 5px;
+    }
+    .product-description {
+        margin-left: 20px; /* Espacio entre la imagen y el texto */
+    }
+    h2 {
+        margin-bottom: 10px; /* Reducir el margen inferior del título */
+    }
+    .offer-button {
+        background-color: #61b0b2;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 20px;
+    }
+    .offer-button:hover {
+        background-color: #fff;
+        color: #61b0b2;
+    }
+    textarea {
+        width: 100%;
+        max-width: 600px;
+        height: 60px; /* Altura reducida del área de texto */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+        margin-bottom: 20px; /* Espacio entre el botón y el área de comentario */
+    }
+    .comment-button {
+        background-color: #61b0b2;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .comment-button:hover {
+        background-color: #fff;
+        color: #61b0b2;
+    }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <img src="ruta_de_la_imagen.jpg" alt="Logo de la empresa">
+        </div>
+        <div class="nav-links">
+            <button onclick="location.href='inicio.html'">INICIO</button>
+            <button onclick="location.href='publicaciones.html'">PUBLICACIONES</button>
+            <button onclick="location.href='mi_perfil.html'">MI PERFIL</button>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-image-container">
+            <img src="ruta_de_la_imagen_producto.jpg" alt="Foto del producto">
+            <div class="product-description">
+                <h2>Nombre del Producto</h2>
+                <p>Descripción del producto...</p>
+                <button class="offer-button">Ofertar</button>
+            </div>
+        </div>
+        <textarea placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
+        <button class="comment-button">Comentar</button>
+    </div>
+</body>
+</html>

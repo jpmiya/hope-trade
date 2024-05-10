@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil de Usuario</title>
+<style>
+    body {
+        background-color: #61b0b2;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar {
+        background-color: #ffffff;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    .navbar img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .nav-links {
+        display: flex;
+    }
+    .nav-links button {
+        background-color: transparent;
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-right: 20px;
+        font-size: 16px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .profile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: gray;
+        overflow: hidden;
+    }
+    .profile-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .profile-form input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .save-button {
+        background-color: #9FF781;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    .return-button {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <img src="ruta_de_la_imagen.jpg" alt="Foto de perfil">
+        </div>
+        <div class="nav-links">
+            <button onclick="location.href='inicio.html'">INICIO</button>
+            <button onclick="location.href='menuPublicaciones.html'">PUBLICACIONES</button>
+            <button onclick="location.href='miPerfil.html'">MI PERFIL</button>
+        </div>
+    </div>
+    <div class="container">
+        <h2>MI PERFIL: </h2>
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="ruta_de_la_imagen.jpg" alt="Foto de perfil">
+            </div>
+            <div class="profile-options">
+                <button class="return-button" id="volver">Volver</button>
+                <button class="save-button" id="guardar">Guardar</button>
+            </div>
+        </div>
+        <form class="profile-form" action="#" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="Nombre Actual">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="email@actual.com">
+        </form>
+    </div>
+</body>
+
+<script>
+    const botonVolver = document.getElementById('volver');
+
+    botonVolver.addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#61b0b2'; // Cambia el color al fondo cuando se coloca el cursor
+    });
+
+    botonVolver.addEventListener('mouseout', function() {
+        this.style.backgroundColor = 'white'; // Restaura el color blanco cuando se retira el cursor
+    });
+
+    const botonGuardar = document.getElementById('guardar');
+
+    botonGuardar.addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#61b0b2'; // Cambia el color al fondo cuando se coloca el cursor
+    });
+
+    botonGuardar.addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#9FF781'; // Restaura el color blanco cuando se retira el cursor
+    });
+
+</script>
+</html>
+
